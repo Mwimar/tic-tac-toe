@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="styles/style.css">
 <link rel="stylesheet" href="styles/overlays.css">
 <link rel="stylesheet" href="styles/configuration-overlay.css">
+<link rel="stylesheet" href="styles/game.css">
     <title>Tic-Tac-Toe</title>
   </head>
   <body>
@@ -37,7 +38,7 @@
             <article>
               <h2>Player 1</h2>
               <h3>Player Name</h3>
-              <p>X</p>
+              <p class="player-symbol">X</p>
               <button class="btn btn-alt">Edit</button>
             </article>
           </li>
@@ -45,7 +46,7 @@
             <article>
               <h2>Player 2</h2>
               <h3>Player Name</h3>
-              <p>X</p>
+              <p class="player-symbol">O</p>
               <button class="btn btn-alt">Edit</button>
             </article>
           </li>
@@ -53,7 +54,7 @@
         <button class="btn">Start New Game</button>
       </section>
       <section id="active-game">
-        <article>
+        <article id="game-over">
             <h3>You have won <span id="winner-name"> </h3>
             <p>Click "Start New Game" above to start new game</p>
         </article>

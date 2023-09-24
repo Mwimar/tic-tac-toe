@@ -1,0 +1,17 @@
+#active-game{
+    text-align:center;
+    /* display:none; */
+    margin:2rem 0 5rem 0;
+    
+}
+#game-over{
+    width:90%;
+    max-width:40rem;
+    margin:auto;
+    padding:2rem 1rem;
+    background-color: orangered;
+    color:white;
+    border-radius:4px;
+    box-shadow:0 2px 8px rgb(49, 48, 48);
+    /* display:none; */
+}
