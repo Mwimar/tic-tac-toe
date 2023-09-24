@@ -1,0 +1,25 @@
+#config-overlay{
+    margin:0.5rem 0;
+    text-align:center;
+}
+
+.form-control{
+    margin:0.5rem 0;
+    display:block;
+}
+
+.form-control label{
+    display:block;
+    margin-bottom:0.5rem;
+    font-weight:bold;
+
+}
+
+.form-conrol input{
+    font: inherit;
+    border:1px solid grey;
+    width:15rem;
+    padding: 0.35rem;
+    border-radius:5px;
+}
+
