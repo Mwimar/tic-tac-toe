@@ -13,6 +13,11 @@ function savePlayerConfig(event) {
     //const extractForm = document.querySelector('#formElement');
     //extractForm.preventDefault();
     const formData = new FormData(event.target);
-    const enteredPlayerName=formData.get('playerName');
-    console.log(enteredPlayerName);
+    const enteredPlayerName=formData.get('playerName').trim();//gets rid of excess whitespace
+    // console.log(enteredPlayerName);
+
+    if (!enteredPlayerName) {
+        errorsOutputElement.textContent='Enter a Valid Name!';
+        return;
+    }
     }
