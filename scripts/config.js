@@ -39,5 +39,10 @@ function savePlayerConfig(event) {
     // } else {
     //     players[1].name=enteredPlayerName
     // }
+
     cancelPlayerConfig(); //to manually close the function after all criteria has been met
-    }
+}
+    
+function startGame() {
+        gameArea.style.display='block';
+};

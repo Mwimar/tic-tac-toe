@@ -26,6 +26,7 @@
 .error label{
     color:rgb(190, 33, 33);
 }
+
 .error input{
     border-color:rgb(190, 33, 33);
     color:rgb(190, 33, 33);
