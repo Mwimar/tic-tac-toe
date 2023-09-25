@@ -1,9 +1,12 @@
-function openPlayerConfig() {
+function openPlayerConfig(event) {
+    editedPlayer = +event.target.dataset.playerid; //+1 changing the string value type to number
     playerConfigOverlay.style.display = 'block';
     backdropElement.style.display = 'block';
 }
 
 function cancelPlayerConfig() {
+    // a dash is not allowed with the dot notation use [player-id] instead
+    
     playerConfigOverlay.style.display='none'
     backdropElement.style.display = 'none';
     formElement.firstElementChild.classList.remove('error');
@@ -16,7 +19,7 @@ function savePlayerConfig(event) {
     //extractForm.preventDefault();
     const formData = new FormData(event.target);
     const enteredPlayerName=formData.get('playerName').trim();//gets rid of excess whitespace
-    // console.log(enteredPlayerName);
+    //console.log(enteredPlayerName);
 
     if (!enteredPlayerName) {
         event.target.firstElementChild.classList.add('error');
@@ -24,4 +27,7 @@ function savePlayerConfig(event) {
         
         return;
     }
+
+    const updatedPlayerDataElement = document.getElementById('player-' + editedPlayer + '-data');
+    updatedPlayerDataElement.children[1].textContent = enteredPlayerName;//updating h3 element from entered data
     }
