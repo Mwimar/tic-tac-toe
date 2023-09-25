@@ -23,6 +23,15 @@
     border-radius:5px;
 }
 
+.error label{
+    color:rgb(190, 33, 33);
+}
+.error input{
+    border-color:rgb(190, 33, 33);
+    color:rgb(190, 33, 33);
+    background-color:rgb(236, 183, 183);
+
+}
 #game-configuration{
     width:90%;
     max-width:40rem;
