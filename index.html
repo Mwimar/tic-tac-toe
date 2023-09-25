@@ -10,8 +10,8 @@
 <link rel="stylesheet" href="styles/overlays.css">
 <link rel="stylesheet" href="styles/configuration-overlay.css">
 <link rel="stylesheet" href="styles/game.css">
-<script src="scripts/app.js" defer></script>
 <script src="scripts/config.js" defer></script>
+<script src="scripts/app.js" defer></script>
 <script src="scripts/game.js" defer></script>
     <title>Tic-Tac-Toe</title>
   </head>
@@ -26,11 +26,11 @@
       <aside class="modal" id="config-overlay">
         <form>
           <div class="form-control">
-            <label for="player-name">Player Name</label>
-            <input type="text" name="user-name" id="player-name" />
+            <label for="playerName">Player Name</label>
+            <input type="text" name="playerName" id="playerName" />
           </div>
           <div>
-            <button type="button" class="btn btn-alt">Cancel</button>
+            <button type="button" class="btn btn-alt" id="cancel-config-btn">Cancel</button>
             <button type="submit"class="btn">Confirm</button>
           </div>
         </form>
@@ -42,7 +42,7 @@
               <h2>Player 1</h2>
               <h3>Player Name</h3>
               <p class="player-symbol">X</p>
-              <button class="btn btn-alt">Edit</button>
+              <button class="btn btn-alt" id="edit-player-1-btn">Edit</button>
             </article>
           </li>
           <li>
@@ -50,7 +50,7 @@
               <h2>Player 2</h2>
               <h3>Player Name</h3>
               <p class="player-symbol">O</p>
-              <button class="btn btn-alt">Edit</button>
+              <button class="btn btn-alt" id="edit-player-2-btn">Edit</button>
             </article>
           </li>
         </ol>
