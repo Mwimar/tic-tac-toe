@@ -4,6 +4,7 @@ function startNewGame() {
         return;
     }
     gameArea.style.display = 'block';
+    activeplayerElement.textContent = players[activePlayer].name;
 }
 
 
@@ -12,10 +13,16 @@ function switchPlayer() {
         activePlayer = 1;
     } else {
         activePlayer = 0;
-    }
+    };
+    activeplayerElement.textContent = players[activePlayer].name;
+    
 }
 function selectGameField(event) {
-    event.target.textContent = players[activePlayer].symbol;
+    // console.log(event.target.tagName);
+    if (event.target.tagName!=='LI') {
+        return;
+    }
+    event.target.textContent = players[activePlayer].symbol;//setting default active player
     event.target.classList.add('disabled');
     switchPlayer();
 }
