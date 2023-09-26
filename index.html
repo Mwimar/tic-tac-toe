@@ -10,9 +10,11 @@
 <link rel="stylesheet" href="styles/overlays.css">
 <link rel="stylesheet" href="styles/configuration-overlay.css">
 <link rel="stylesheet" href="styles/game.css">
+<script src="scripts/game.js" defer></script>
 <script src="scripts/config.js" defer></script>
 <script src="scripts/app.js" defer></script>
-<script src="scripts/game.js" defer></script>
+<script src="scripts/game-config.js" defer></script>
+
     <title>Tic-Tac-Toe</title>
   </head>
   <body>
@@ -36,6 +38,7 @@
           </div>
         </form>
       </aside>
+
       <section id="game-configuration">
         <ol>
           <li>
@@ -58,6 +61,7 @@
         </ol>
         <button class="btn" id="start-game-btn">Start New Game</button>
       </section>
+
       <section id="active-game">
         <article id="game-over">
             <h2>You have won <span id="winner-name"> </h2>
@@ -81,5 +85,6 @@
 
       </section>
     </main>
+    
   </body>
 </html>

@@ -43,6 +43,10 @@ function savePlayerConfig(event) {
     cancelPlayerConfig(); //to manually close the function after all criteria has been met
 }
     
-function startGame() {
-        gameArea.style.display='block';
-};
+// function startGame() {
+//      if (players[0].name === '' || players[1].name === '') {
+//     alert('Please Set custom names for both players');
+//     return
+//      }
+//      gameArea.style.display = 'block';
+// };
