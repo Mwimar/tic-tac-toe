@@ -15,7 +15,7 @@ function switchPlayer() {
         activePlayer = 0;
     };
     activeplayerElement.textContent = players[activePlayer].name;
-    console.log(activePlayer);
+   // console.log(activePlayer);
     
 }
 function selectGameField(event) {
@@ -36,7 +36,13 @@ function selectGameField(event) {
     event.target.classList.add('disabled');
 
     
-    gameData[selectedColumn][selectedRow]=activePlayer+1;
+    gameData[selectedColumn][selectedRow] = activePlayer + 1;
+
+     const winnerId = checkForGameOver();
+     console.log(winnerId);
+    //console.log(gameData);
+    
+
     switchPlayer();
 }
 
@@ -55,12 +61,41 @@ function selectGameField(event) {
 // }
 
 function checkForGameOver() {
-    //checking rows
-    for (i = 0; 1 < 3; i++) {
+    //checking rows for equality
+    for (let i = 0; i < 3; i++) {
         if (gameData[i][0] > 0 &&
             gameData[i][0] === gameData[i][1] &&
-            gameData[i][1] === gameData[i][2]) {
+            gameData[i][1] === gameData[i][2])
+         {
             return gameData[i][0];
         }
     }
-}
+    
+//checking columns for equality
+        for (let i = 0; i < 3; i++) {
+            if (gameData[0][i] > 0 &&
+                gameData[0][i] === gameData[1][i] &&
+                gameData[0][i] === gameData[2][i])
+            {
+                return gameData[0][i];
+            }
+    }
+
+    //Diagonal Check top left to bottom right
+    if (gameData[0][0] > 0 &&
+        gameData[0][0] === gameData[1][1] &&
+        gameData[1][1] === gameData[2][2]) {
+        return gameData[0][0];
+    }
+
+    //Diagonal check bottom left to top right
+    if (gameData[2][0] > 0 &&
+        gameData[2][0] === gameData[1][1] &&
+        gameData[1][1] === gameData[0][2])
+    {
+         return gameData[2][0];
+     }
+    
+    return 0;
+    
+};
