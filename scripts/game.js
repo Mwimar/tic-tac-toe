@@ -22,7 +22,20 @@ function selectGameField(event) {
     if (event.target.tagName!=='LI') {
         return;
     }
+
+    const selectedField = event.target;
+    const selectedColumn = selectedField.dataset.col-1;
+    const selectedRow = selectedField.dataset.row - 1;
+    
+    if (gameData[selectedColumn][selectedRow] > 0) {
+        alert('Please select an empty field')
+        return;
+    };
     event.target.textContent = players[activePlayer].symbol;//setting default active player
     event.target.classList.add('disabled');
+
+    
+    gameData[selectedColumn][selectedRow]=activePlayer+1;
+    console.log(gameData);
     switchPlayer();
 }
