@@ -15,6 +15,7 @@ function switchPlayer() {
         activePlayer = 0;
     };
     activeplayerElement.textContent = players[activePlayer].name;
+    console.log(activePlayer);
     
 }
 function selectGameField(event) {
@@ -36,6 +37,19 @@ function selectGameField(event) {
 
     
     gameData[selectedColumn][selectedRow]=activePlayer+1;
-    console.log(gameData);
     switchPlayer();
+}
+
+function checkForGameOver() {
+    if (gameData[0][0]>0 && gameData[0][0] === gameData[0][1] && gameData[0][1]===gameData[0][2] ){
+        return gameData[0][0];//first inner array
+    }
+
+     if (gameData[1][0]>0 && gameData[1][0] === gameData[1][1] && gameData[1][1]===gameData[1][2] ){
+        return gameData[1][0]; //second inner array
+     }
+    
+    if (gameData[2][0]>0 && gameData[2][0] === gameData[2][1] && gameData[2][1]===gameData[2][2] ){
+        return gameData[2][0]; //third inner array
+    }
 }
