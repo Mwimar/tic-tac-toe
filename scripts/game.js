@@ -40,16 +40,27 @@ function selectGameField(event) {
     switchPlayer();
 }
 
-function checkForGameOver() {
-    if (gameData[0][0]>0 && gameData[0][0] === gameData[0][1] && gameData[0][1]===gameData[0][2] ){
-        return gameData[0][0];//first inner array
-    }
+// function checkForGameOver() {
+//     if (gameData[0][0]>0 && gameData[0][0] === gameData[0][1] && gameData[0][1]===gameData[0][2] ){
+//         return gameData[0][0];//first inner array
+//     }
 
-     if (gameData[1][0]>0 && gameData[1][0] === gameData[1][1] && gameData[1][1]===gameData[1][2] ){
-        return gameData[1][0]; //second inner array
-     }
+//      if (gameData[1][0]>0 && gameData[1][0] === gameData[1][1] && gameData[1][1]===gameData[1][2] ){
+//         return gameData[1][0]; //second inner array
+//      }
     
-    if (gameData[2][0]>0 && gameData[2][0] === gameData[2][1] && gameData[2][1]===gameData[2][2] ){
-        return gameData[2][0]; //third inner array
+//     if (gameData[2][0]>0 && gameData[2][0] === gameData[2][1] && gameData[2][1]===gameData[2][2] ){
+//         return gameData[2][0]; //third inner array
+//     }
+// }
+
+function checkForGameOver() {
+    //checking rows
+    for (i = 0; 1 < 3; i++) {
+        if (gameData[i][0] > 0 &&
+            gameData[i][0] === gameData[i][1] &&
+            gameData[i][1] === gameData[i][2]) {
+            return gameData[i][0];
+        }
     }
 }
