@@ -1,8 +1,29 @@
+function resetGameStatus() {
+    activePlayer = 0;
+    currentRound = 1;
+    gameOverElement.firstElementChild.innerHTML = '<h2>You have won <span id="winner-name"></span></h2>'; 
+    gameOverElement.style.display = 'none';
+
+    let gameBoardIndex = 0;
+    for (let i = 0; i < 3; i++){
+        for (let j = 0; j < 3; j++){
+            gameData[i][j] = 0;
+            const gameBoardItemElement = gameBoardElements.children[gameBoardIndex];
+            gameBoardItemElement.textContent = '';
+            gameBoardItemElement.classList.remove('disabled');
+            gameBoardIndex++;
+        }
+    }
+
+};
+
 function startNewGame() {
     if (players[0].name === '' || players[1].name === '') {
         alert('Enter valid name for both players');
         return;
     }
+    resetGameStatus();
+    
     gameArea.style.display = 'block';
     activeplayerElement.textContent = players[activePlayer].name;
 }
