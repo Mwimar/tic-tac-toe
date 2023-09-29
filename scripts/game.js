@@ -1,7 +1,8 @@
 function resetGameStatus() {
     activePlayer = 0;
     currentRound = 1;
-    gameOverElement.firstElementChild.innerHTML = '<h2>You have won <span id="winner-name"></span></h2>'; 
+    isGameOver = false;
+    gameOverElement.firstElementChild.innerHTML = 'You have won <span id="winner-name"></span>'; 
     gameOverElement.style.display = 'none';
 
     let gameBoardIndex = 0;
@@ -23,7 +24,7 @@ function startNewGame() {
         return;
     }
     resetGameStatus();
-    
+
     gameArea.style.display = 'block';
     activeplayerElement.textContent = players[activePlayer].name;
 }
@@ -41,7 +42,8 @@ function switchPlayer() {
 }
 function selectGameField(event) {
     // console.log(event.target.tagName);
-    if (event.target.tagName!=='LI') {
+    //isGameOver===true
+    if (event.target.tagName!=='LI' || isGameOver===true) {
         return;
     }
 
@@ -130,6 +132,7 @@ function checkForGameOver() {
 };
 
 function endGame(winnerId) {
+    isGameOver = true;
     gameOverElement.style.display = 'block';
     if (winnerId > 0) {
         const winnerName = players[winnerId - 1].name;
