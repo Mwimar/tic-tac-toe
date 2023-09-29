@@ -24,6 +24,7 @@ const formElement = document.querySelector('form');
 const errorsOutputElement = document.getElementById('errors-output');
 const gameArea = document.getElementById('active-game');
 const activeplayerElement = document.getElementById('active-player-name');
+const gameOverElement = document.getElementById('game-over');
 
 
 const editPlayer1Btn = document.getElementById('edit-player-1-btn');
